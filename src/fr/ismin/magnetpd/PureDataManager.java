@@ -47,8 +47,10 @@ public class PureDataManager implements SharedPreferences.OnSharedPreferenceChan
 	/********************************************************************/
 	
 	protected void initPDFunctions(){
+		//*
 		assetMgr = mainActivity.getAssetManager();
 		patchList = mainActivity.getPatchList();
+		//*/
 		initPdReceiver();
 		PdPreferences.initPreferences(mainActivity.getApplicationContext());
 		PreferenceManager.getDefaultSharedPreferences(mainActivity.getApplicationContext()).registerOnSharedPreferenceChangeListener(this);

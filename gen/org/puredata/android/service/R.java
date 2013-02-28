@@ -33,7 +33,7 @@ public final class R {
 		public static final int pref_sum_srate = 0x7f070004;
 	}
 	public static final class drawable {
-		public static final int icon = 0x7f020001;
+		public static final int icon = 0x7f020008;
 	}
 	public static final class xml {
 		public static final int preferences = 0x7f040000;

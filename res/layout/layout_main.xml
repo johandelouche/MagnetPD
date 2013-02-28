@@ -3,14 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
+       
      <fragment 
-         	android:name="fr.ismin.magnetpd.LayoutFragment"
-              android:id="@+id/layout_fragment"
-              android:layout_weight="1"
-              android:layout_width="match_parent"
-              android:layout_height="0dip" />
-    
+         android:name="fr.ismin.magnetpd.LayoutFragment"
+         android:id="@+id/layout_fragment"
+         android:layout_weight="1"
+         android:layout_width="match_parent"
+         android:layout_height="0dip" />
 
 </LinearLayout>
 

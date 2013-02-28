@@ -56,7 +56,6 @@ public class SensorsManager implements SensorEventListener {
 		emCaptor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
 		accelerometerCaptor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 	
-		//wifiManager.
 		List<Sensor> sensors = sensorManager.getSensorList(Sensor.TYPE_ALL);
 		
 		for (Sensor s : sensors) {
@@ -68,7 +67,7 @@ public class SensorsManager implements SensorEventListener {
 			public void onSignalStrengthsChanged(SignalStrength signalStrength) {
 				super.onSignalStrengthsChanged(signalStrength);
 				if (signalStrength.isGsm()) {
-					//Log.i(TAG, Integer.toString(signalStrength.getGsmSignalStrength()));
+					//Log.i(TAG, "gsm "+signalStrength.getGsmSignalStrength());
 					PdBase.sendFloat("gsm", (float)signalStrength.getGsmSignalStrength());
 				}
 			}
@@ -79,14 +78,16 @@ public class SensorsManager implements SensorEventListener {
 			@Override
 			public void onReceive(Context context, Intent intent) {
 				PdBase.sendFloat("wifi", (float)wifiManager.getConnectionInfo().getRssi());
-				Log.i(TAG, "wifi "+wifiManager.getConnectionInfo().getRssi());
+				//Log.i(TAG, "wifi "+wifiManager.getConnectionInfo().getRssi());
 			}
 		};	
 	}
 	
 	
 	protected void onStop() {
-		// unregister the sensor
+		/*
+		 *  unregister the sensors
+		 */
 		sensorManager.unregisterListener(this, emCaptor);
 		sensorManager.unregisterListener(this, accelerometerCaptor);
 		mainActivity.unregisterReceiver(wifiRssiChanged);
@@ -95,7 +96,9 @@ public class SensorsManager implements SensorEventListener {
 
 
 	protected void onStart() {
-
+		/*
+		 *  register the sensors
+		 */
 		sensorManager.registerListener(this, emCaptor, SensorManager.SENSOR_DELAY_UI);
 		sensorManager.registerListener(this, accelerometerCaptor, SensorManager.SENSOR_DELAY_UI);
 		mainActivity.registerReceiver(wifiRssiChanged, new IntentFilter(WifiManager.RSSI_CHANGED_ACTION));
@@ -123,8 +126,12 @@ public class SensorsManager implements SensorEventListener {
 							zMagnetic*zMagnetic));
 
 			mainActivity.redraw(magneticStrength);
-
+			
+			
+			
 			PdBase.sendFloat("magnetic",(float) (magneticStrength));
+			
+			//Log.i(TAG, "magnetic "+magneticStrength);
 		}
 		if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
 			

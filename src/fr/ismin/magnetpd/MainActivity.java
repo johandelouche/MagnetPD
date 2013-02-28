@@ -16,9 +16,10 @@ import android.view.View;
 public class MainActivity extends FragmentActivity {
 	
 	private LayoutFragment layoutFragment;
-
 	private SensorsManager sensorsManager;
 	private PureDataManager pureDataManager;
+	private RecordAudioManager recordAudioManager;
+	
 	
 	private PowerManager.WakeLock wakeLock;
 	private static final String TAG = "Theremin Test";
@@ -26,6 +27,8 @@ public class MainActivity extends FragmentActivity {
 	private int min;
 	private int sec;
 	
+	private boolean started = false;
+
 
 	/************************************************************************/
 	/** Manage life cycle ******************************************************/
@@ -43,21 +46,37 @@ public class MainActivity extends FragmentActivity {
 		// PureData
 		pureDataManager = new PureDataManager(this);
 		// RecordAudioManager
-		RecordAudioManager.init(this);
+		recordAudioManager = new RecordAudioManager(this);	
 	}
+	
+	
 	
 	@Override
 	protected void onStart(){
 		wakeLock.acquire();
-		sensorsManager.onStart();
+		start();
 		super.onStart();
+	}
+	
+	public void start() {
+		if (!started) {
+			sensorsManager.onStart();
+			started = true;
+		}
 	}
 	
 	@Override
 	protected void onStop(){
 		wakeLock.release();
-		sensorsManager.onStop();
+		stop();
 		super.onStop();
+	}
+	
+	public void stop() {
+		if (started) {
+			sensorsManager.onStop();
+			started = false;
+		}
 	}
 	
 	
@@ -92,13 +111,14 @@ public class MainActivity extends FragmentActivity {
 		layoutFragment.post(s);
 	}
 
-
-
-	
-	public void mute(View v) {
-		layoutFragment.mute();
+	public void record(View v) {
+		recordAudioManager.record();
 	}
 	
+	public void onOff(View v) {
+		layoutFragment.onOff();
+	}
+
 	protected ArrayList<String> getPatchList(){
 		return layoutFragment.getPatchList();
 	}
@@ -111,7 +131,6 @@ public class MainActivity extends FragmentActivity {
 	void loadPatch(String s) {
 		pureDataManager.loadPatch(s);
 	}
-	
 	
 	public void updateMin(int min) {
 		this.min = min;
