@@ -9,26 +9,17 @@ import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-import android.view.View.OnClickListener;
-import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 
-public class LayoutFragment extends Fragment /*implements OnItemSelectedListener*/ {
+public class LayoutFragment extends Fragment {
 	
 	private MainActivity mainActivity;
 	private View view;
