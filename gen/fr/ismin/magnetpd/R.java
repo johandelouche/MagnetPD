@@ -41,17 +41,13 @@ public final class R {
         public static final int diode=0x7f0a0002;
         public static final int layout_fragment=0x7f0a0006;
         public static final int magn_strength=0x7f0a0000;
-        public static final int menu_settings=0x7f0a0009;
+        public static final int menu_settings=0x7f0a0007;
         public static final int on_off=0x7f0a0003;
-        public static final int pager=0x7f0a0008;
         public static final int record=0x7f0a0004;
-        public static final int textView1=0x7f0a0007;
     }
     public static final class layout {
         public static final int layout_fragment=0x7f030000;
         public static final int layout_main=0x7f030001;
-        public static final int layout_player=0x7f030002;
-        public static final int view_pager=0x7f030003;
     }
     public static final class menu {
         public static final int activity_main=0x7f090000;

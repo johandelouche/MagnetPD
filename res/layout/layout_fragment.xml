@@ -3,90 +3,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical"
-    tools:context=".MainActivity" 
-    android:background="@drawable/background">
-    
-     <RelativeLayout 
-         android:layout_width="match_parent"
-    	android:layout_height="wrap_content">
-     <ImageView
-        android:contentDescription="@string/app_name"
-        android:id="@+id/magn_strength"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="15dip"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/vu_meter"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    tools:context=".MainActivity" >
 
-     <ImageView
-        android:contentDescription="@string/app_name"
-        android:id="@+id/aiguille"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="15dip"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/aiguille"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-      <ImageView
-        android:contentDescription="@string/app_name"
-        android:id="@+id/diode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="15dip"
-        android:layout_centerHorizontal="true"
-        android:visibility="invisible"
-        android:background="@drawable/diode"
-        />
-      </RelativeLayout>
-<LinearLayout 
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:gravity="center_horizontal">
-    <ToggleButton
-        android:id="@+id/on_off"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dip"
-        android:button="@drawable/button_on_off"
-        android:background="@drawable/button_on_off"
-        android:checked="false"
-        android:onClick="onOff"/>
-
-    
-    <ToggleButton 
-        android:id="@+id/record"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dip"
-        android:button="@drawable/button_record"
-        android:background="@drawable/button_record"
-        android:checked="false"
-        android:onClick="record"
-        android:clickable="true"
-        />
-    </LinearLayout>
-    <RelativeLayout 
+    <RelativeLayout
         android:layout_width="match_parent"
-    	android:layout_height="wrap_content"
-    	>
-    <TextView
-        android:id="@+id/count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dip"
-        android:textSize="45sp"
-        android:textColor="#f00"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:background="@drawable/timer"
-    	android:text="@string/count" />
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/magn_strength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dip"
+            android:background="@drawable/vu_meter"
+            android:contentDescription="@string/app_name"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <ImageView
+            android:id="@+id/aiguille"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dip"
+            android:background="@drawable/aiguille"
+            android:contentDescription="@string/app_name"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <ImageView
+            android:id="@+id/diode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dip"
+            android:background="@drawable/diode"
+            android:contentDescription="@string/app_name"
+            android:visibility="invisible" />
     </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <ToggleButton
+            android:id="@+id/on_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dip"
+            android:background="@drawable/button_on_off"
+            android:checked="false"
+            android:onClick="onOff"
+            android:textOff=""
+            android:textOn="" />
+
+        <ToggleButton
+            android:id="@+id/record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dip"
+            android:background="@drawable/button_record"
+            android:checked="false"
+            android:clickable="true"
+            android:onClick="record"
+            android:textOff=""
+            android:textOn="" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="15dip"
+            android:background="@drawable/timer"
+            android:gravity="center"
+            android:text="@string/count"
+            android:textColor="#f00"
+            android:textSize="45sp" />
+    </RelativeLayout>
 
 </LinearLayout>
