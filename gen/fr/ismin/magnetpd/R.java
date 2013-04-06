@@ -31,19 +31,21 @@ public final class R {
         public static final int ic_launcher=0x7f020007;
         public static final int icon=0x7f020008;
         public static final int rec_off=0x7f020009;
-        public static final int rec_on=0x7f02000a;
-        public static final int timer=0x7f02000b;
-        public static final int vu_meter=0x7f02000c;
+        public static final int rec_off_ori=0x7f02000a;
+        public static final int rec_on=0x7f02000b;
+        public static final int rec_on_ori=0x7f02000c;
+        public static final int timer=0x7f02000d;
+        public static final int vu_meter=0x7f02000e;
     }
     public static final class id {
         public static final int aiguille=0x7f0a0001;
         public static final int count=0x7f0a0005;
         public static final int diode=0x7f0a0002;
         public static final int layout_fragment=0x7f0a0006;
-        public static final int magn_strength=0x7f0a0000;
         public static final int menu_settings=0x7f0a0007;
         public static final int on_off=0x7f0a0003;
         public static final int record=0x7f0a0004;
+        public static final int vu_meter=0x7f0a0000;
     }
     public static final class layout {
         public static final int layout_fragment=0x7f030000;
@@ -60,10 +62,10 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f07000e;
-        public static final int count=0x7f070012;
-        public static final int default_msg=0x7f070011;
-        public static final int hello_world=0x7f07000f;
-        public static final int menu_settings=0x7f070010;
+        public static final int count=0x7f070011;
+        public static final int default_msg=0x7f070010;
+        public static final int info_msg=0x7f070012;
+        public static final int menu_settings=0x7f07000f;
         public static final int pref_key_bufsize_millis=0x7f07000b;
         public static final int pref_key_inchannels=0x7f070005;
         public static final int pref_key_outchannels=0x7f070008;

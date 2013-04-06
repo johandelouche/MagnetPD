@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MagnetPd</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Sensor Music</string>
     <string name="menu_settings">Settings</string>
     <string name="default_msg"></string>
     <string name="count">00:00</string>
+    <string name="info_msg">You will find the recorded tracks on the sdcard at this location: /sdcard/pd_record/</string>
 
 
 </resources>

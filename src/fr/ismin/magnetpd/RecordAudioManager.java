@@ -5,6 +5,7 @@ import java.io.File;
 import org.puredata.core.PdBase;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.widget.Toast;
 
 
 public class RecordAudioManager {
@@ -38,6 +39,7 @@ public class RecordAudioManager {
 			countRecord++;
 			sharedPreferences.edit().putFloat("count_record", countRecord).commit();
 			PdBase.sendBang("stop_record");
+			Toast.makeText(mainActivity, R.string.info_msg, Toast.LENGTH_LONG).show();
 			recording = !recording;
 		} else {
 			PdBase.sendFloat("countRecord", countRecord);

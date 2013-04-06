@@ -26,7 +26,6 @@ public class LayoutFragment extends Fragment {
 
 	private Toast toast = null;
 
-	private ImageView magnStrengthTextView;
 	private ImageView diode;
 	private ImageView aiguille;
 	private TextView count;
@@ -39,7 +38,7 @@ public class LayoutFragment extends Fragment {
 	private int countRedraw = 0;
 	/*
 	 * private Spinner patchSelector; private ArrayAdapter<String>
-	 * spinnerAdapter; //
+	 * spinnerAdapter; 
 	 */
 	private static final String TAG = "LayoutFragment";
 
@@ -57,12 +56,9 @@ public class LayoutFragment extends Fragment {
 	public void initGUI() {
 
 		diode = ((ImageView) view.findViewById(R.id.diode));
-		magnStrengthTextView = ((ImageView) view
-				.findViewById(R.id.magn_strength));
 		aiguille = ((ImageView) view.findViewById(R.id.aiguille));
 		count = ((TextView) view.findViewById(R.id.count));
-		typeface = Typeface.createFromAsset(mainActivity.getAssets(),
-				"fonts/DS-DIGI.TTF");
+		typeface = Typeface.createFromAsset(mainActivity.getAssets(), "fonts/DS-DIGI.TTF");
 		count.setTypeface(typeface);
 		onOff = ((ToggleButton) view.findViewById(R.id.on_off));
 		/*
