@@ -1,9 +1,10 @@
 /*
- * Created by Paul Tsnobiladzé, Johan Delouche and François Parra
+ * Created by Paul Tsnobiladz?, Johan Delouche and Fran?ois Parra
  */
 
 package fr.ismin.magnetpd;
 
+import com.crashlytics.android.Crashlytics;
 import java.util.ArrayList;
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -35,10 +36,11 @@ public class MainActivity extends FragmentActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		Crashlytics.start(this);
 		PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 		wakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, TAG);
 		initGUI();
-		// Gérer les capteurs :
+		// G?rer les capteurs :
 		sensorsManager = new SensorsManager(this);
 		// PureData
 		pureDataManager = new PureDataManager(this);

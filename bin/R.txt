@@ -36,11 +36,12 @@ int raw extra_abs 0x7f050000
 int raw extra_ext 0x7f050001
 int raw extra_ext_v7a 0x7f050002
 int raw silence 0x7f050003
-int string app_name 0x7f07000e
-int string count 0x7f070011
-int string default_msg 0x7f070010
-int string info_msg 0x7f070012
-int string menu_settings 0x7f07000f
+int string app_name 0x7f07000f
+int string com_crashlytics_android_build_id 0x7f07000e
+int string count 0x7f070012
+int string default_msg 0x7f070011
+int string info_msg 0x7f070013
+int string menu_settings 0x7f070010
 int string pref_key_bufsize_millis 0x7f07000b
 int string pref_key_inchannels 0x7f070005
 int string pref_key_outchannels 0x7f070008

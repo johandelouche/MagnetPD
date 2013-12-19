@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.ismin.magnetpd"
-    android:versionCode="6"
-    android:versionName="1.0.4" >
+    android:versionCode="7"
+    android:versionName="1.1.0" >
 
     <uses-sdk
         android:minSdkVersion="10"
-        android:targetSdkVersion="17" />
+        android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
 
     <uses-feature
         android:name="android.hardware.microphone"
@@ -46,6 +48,7 @@
             android:name="org.puredata.android.service.PdPreferences"
             android:label="Pure Data Preferences"
             android:screenOrientation="portrait" />
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="b8ba4d2d0d3a98153ba4cb971e001e860c10bb3b"/>
     </application>
 
 </manifest>
